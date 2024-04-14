@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="shortcut icon" href="images/FAVICON.png" type="images/png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container2">
+      <div class="forms__container">
+        <div class="login_signup">
+          <form action="#" class="login_form">
+            <h2 class="title">Login</h2>
+
+            <div class="input-field" id="username-input" required>
+              <i class="ri-user-fill"></i>
+              <input type="text" placeholder="Username" required />
+            </div>
+
+            <div class="input-field" id="password-input">
+              <i class="ri-lock-2-fill"></i>
+              <input type="password" placeholder="Password" required />
+            </div>
+
+            <input type="submit" class="logbutton" value="Login" />
+
+            <p class="social-text">Or login with social platforms</p>
+            <div class="social-media">
+              <a href="https://www.facebook.com/" class="social-icon">
+                <i class="ri-facebook-line"></i></a>
+              <a href="https://www.instagram.com/" class="social-icon">
+                <i class="ri-instagram-line"></i>
+              </a>
+              <a href="https://twitter.com/" class="social-icon">
+                <i class="ri-twitter-line"></i>
+              </a>
+              <a href="https://www.google.com/" class="social-icon">
+                <i class="ri-google-fill"></i>
+              </a>
+            </div>
+          </form>
+        </div>
+
+        <div class="signup_signup">
+          <form action="#" class="signup_form">
+            <h2 class="title">Sign Up</h2>
+
+            <div class="input-field" id="input">
+              <i class="ri-user-fill"></i>
+              <input type="text" placeholder="Username" required />
+            </div>
+
+            <div class="input-field" id="input">
+              <i class="ri-lock-2-fill"></i>
+              <input type="password" placeholder="Password" required />
+            </div>
+
+            <div class="input-field" id="input">
+              <i class="ri-mail-fill"></i>
+              <input type="email" placeholder="Email" required/>
+            </div>
+
+            <input type="submit" class="logbutton" value="Sign Up" />
+            <p class="social-text">Or Sign up with social platforms</p>
+            <div class="social-media">
+              <a href="https://www.facebook.com/" class="social-icon"
+                ><i class="ri-facebook-line"></i
+              ></a>
+              <a href="https://www.instagram.com/" class="social-icon"
+                ><i class="ri-instagram-line"></i
+              ></a>
+              <a href="https://twitter.com/" class="social-icon"
+                ><i class="ri-twitter-line"></i
+              ></a>
+              <a href="" class="social-icon"><i class="ri-google-fill"></i></a>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>New Here?</h3>
+            <p>
+              Unlock the world of Porsche. Sign up now to access exclusive
+              services,customize your Porsche experience,and stay connected with
+              your vehicle.
+            </p>
+            <button
+              class="logbutton transparent"
+              id="sign-up-button"
+              type="submit"
+            >
+              Sign Up
+            </button>
+          </div>
+          <img src="images/porsche2.png" alt="" class="image" />
+        </div>
+
+        <div class="panel right-panel">
+          <div class="content">
+            <h3>One Of Us?</h3>
+            <p>
+              As a valued member of our Porsche family, Your journey with us
+              continues seamlessly—no sign-up required. Simply log in below and
+              let the adventure unfold.
+            </p>
+            <button
+              class="logbutton transparent"
+              id="sign-in-button"
+              type="submit"
+            >
+              Login
+            </button>
+          </div>
+          <img src="images/Porsche3.png" alt="" class="image" />
+          <!--<button onclick="goToSpecificPage()" class="back-button">Go to Specific Page</button>-->
+    
+        </div>
+      </div>
+    </div>
+
+    <!--========== SCROLL UP ==========-->
+    <a href="" class="scrollup" id="scroll-up">
+      <i class="ri-arrow-up-line"></i>
+    </a>
+    <!--=============== SCROLL REVEAL ===============-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--=============== SWIPER JS ===============-->
+    <script src=""></script>
+
+    <!--=============== MIXITUP JS ===============-->
+    <script src="swiper-bundle.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="fun.js"></script>
+  </body>
+</html>
