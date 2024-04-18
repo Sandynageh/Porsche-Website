@@ -13,21 +13,63 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+
+  <!--==================== HEADER ====================-->
+  <header class="header2" id="header">
+    <nav class="nav container"> <!-- Add "login-nav" class here -->
+        <a href="#" class="nav__logo">
+            <img src="images/logo1.png" alt="Porsche" />
+            Porsche
+        </a>
+
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="home.html" class="nav__link active_link">Home</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#about" class="nav__link active_link">About</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#popular" class="nav__link active_link">Popular</a>
+                </li>
+                <li class="nav__item">
+                    <a href="contact.html" class="nav__link active_link">Contact Us</a>
+                </li>
+            </ul>
+            <div class="nav__close" id="nav-close">
+                <i class="ri-close-line"></i>
+            </div>
+        </div>
+
+        <div class="nav__toggle" id="nav-toggle">
+            <i class="ri-menu-line"></i>
+        </div>
+        <!--login icon-->
+        <div class="nav__login" id="login-icon">
+            <a href="login.html" class="login-link"><i class="ri-car-line"></i>login</a>
+        </div>
+
+    </nav>
+</header>
+
+ <!--login form-->
     <div class="container2">
       <div class="forms__container">
         <div class="login_signup">
           <form action="#" class="login_form">
             <h2 class="title">Login</h2>
 
-            <div class="input-field" id="username-input" required>
-              <i class="ri-user-fill"></i>
-              <input type="text" placeholder="Username" required />
-            </div>
+            <div class="input-group">
+              <input type="text" name="first_name" id="first-name" placeholder="First name">
+              <label for="first-name">Username</label>
+          </div>
+          
+          <div class="input-group">
+              <input type="text" name="last_name" id="last-name" placeholder="Last Name">
+              <label for="last-name">Password</label>
+          </div>
 
-            <div class="input-field" id="password-input">
-              <i class="ri-lock-2-fill"></i>
-              <input type="password" placeholder="Password" required />
-            </div>
 
             <input type="submit" class="logbutton" value="Login" />
 
@@ -52,20 +94,21 @@
           <form action="#" class="signup_form">
             <h2 class="title">Sign Up</h2>
 
-            <div class="input-field" id="input">
-              <i class="ri-user-fill"></i>
-              <input type="text" placeholder="Username" required />
-            </div>
+            <div class="input-group">
+              <input type="text" name="last_name" id="last-name" placeholder="Last Name">
+              <label for="last-name">Username</label>
+          </div>
 
-            <div class="input-field" id="input">
-              <i class="ri-lock-2-fill"></i>
-              <input type="password" placeholder="Password" required />
-            </div>
+          <div class="input-group">
+            <input type="text" name="last_name" id="last-name" placeholder="Last Name">
+            <label for="last-name">Password</label>
+        </div>
 
-            <div class="input-field" id="input">
-              <i class="ri-mail-fill"></i>
-              <input type="email" placeholder="Email" required/>
-            </div>
+        <div class="input-group">
+          <input type="text" name="last_name" id="last-name" placeholder="Last Name">
+          <label for="last-name">Email</label>
+      </div>
+
 
             <input type="submit" class="logbutton" value="Sign Up" />
             <p class="social-text">Or Sign up with social platforms</p>

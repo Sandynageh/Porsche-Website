@@ -412,6 +412,8 @@ img {
   box-shadow: 0 2px 2px hsla(0, 0%, 1%, 1);
 }
 
+
+
 /******ABOUT******/
 
 .about__container {
@@ -1036,52 +1038,11 @@ form {
 }
 
 .title {
-  font-size: 2.1rem;
-  color: #dadada;
-  margin-bottom: 12px;
-}
-input {
-  color: #b3b3b3;
-}
-
-.input-field {
-  max-width: 380px;
-  width: 90%;
-  height: 50px;
-  background-color: none;
-  margin: 9px 0;
-  border-radius: 10px;
-  display: grid;
-  grid-template-columns: 15% 85%;
-  padding: 0 0.4rem;
-  position: relative;
-  border: 2px solid;
-}
-.login_form .input-field{
-  width: 150%;
-  height: 50px;
-}
-
-.input-field i {
-  text-align: center;
-  line-height: 55px;
-  color: #acacac;
   font-size: 1rem;
+  color: #dadada;
+  margin-bottom: 18px;
 }
 
-.input-field input {
-  background: none;
-  outline: none;
-  border: none;
-  line-height: 1;
-  font-weight: 100;
-  font-size: 1.3rem;
-}
-
-.input-field input:placeholder-shown {
-  color: #acacac;
-  font-weight: 200;
-}
 
 
 .logbutton {
@@ -1093,8 +1054,9 @@ input {
   background-image: linear-gradient(135deg, rgb(22, 68, 45), rgb(6, 37, 18));
   color: white;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 300;
   margin: 10px 0;
+  font-size:small;
   transition: all 0.5s;
 }
 
@@ -1274,18 +1236,215 @@ form.signup_form {
   opacity: 1;
 }
 
+/*nav bar in login */
+.header2{
+  width: 100%;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: var(--body-color);
+  box-shadow: 0 2px 2px rgb(0, 0, 0);
+}
 
-/*go back button*/ 
-.back-button {
-  background-color: rgb(22, 68, 45); /* Green background */
-  border: none; /* Remove border */
-  color: white; /* White text */
-  padding: 15px 32px; /* Padding */
-  text-align: center; /* Center text */
-  text-decoration: none; /* Remove underline */
-  display: inline-block; /* Make it a block element */
-  font-size: 16px; /* Font size */
-  margin: -50px; /* Add some margin */
-  cursor: pointer; /* Cursor on hover */
-  border-radius: 5px; /* Rounded corners */
+
+
+/* contact from */
+.contact_form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  margin: auto;
+}
+
+.title
+{
+    font-size: 35px;
+    font-weight: bold;
+    padding: 2.5% 0;
+  
+}
+.title2
+{
+  font-size: 30px;
+  font-weight: bold;
+  padding: 8% 0;
+  margin-bottom: -60px;
+  margin-top: 20px;
+}
+
+
+.title-info
+{
+	padding-bottom: 2%;
+}
+.title-info2
+{
+	padding-top: 1px;
+  margin-bottom: 20px;
+}
+
+.form2
+{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding: 0.5%;
+}
+
+.input-group, .textarea-group
+{
+    padding: 0.5% 0;
+}
+
+.input-group2, .textarea-group2
+{
+  padding: 0.5% 0;
+
+
+}
+
+input, textarea
+{
+    color: inherit;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #757575;
+    padding: 1.5%;
+    font-size: 20px;
+    
+}
+input:focus, textarea:focus
+{
+    background-color: transparent;
+    outline: transparent;
+    border-bottom: 2px solid #69f0ae;
+    font-size: 17px;
+}
+
+input::placeholder, textarea::placeholder
+{
+    color: transparent;
+}
+
+label
+{
+    color: #757575;
+    position: relative;
+    left: 0.5em;
+    top: -2em;
+	  cursor: auto;
+    transition: 0.3s ease all;
+}
+
+input:focus ~ label, input:not(:placeholder-shown) ~ label
+{
+    top: -2.8em;
+    color: transparent;
+    font-size: 17px;
+}
+
+textarea:focus ~ label, textarea:not(:placeholder-shown) ~ label
+{
+    top: -8.5em;
+    color: #69f0ae;
+    font-size: 17px;
+}
+
+.button-div
+{
+    display: flex;
+    justify-content: center;
+}
+
+button
+{
+    padding: 2%;
+    width:110px;
+    border: 1px solid;
+    border-color: #212121;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 18px;
+    background-image: linear-gradient(135deg,hsl(151, 26%, 33%),hsl(151, 26%, 33%));
+    color: inherit;
+    
+}
+
+button:hover
+{
+    background-image: linear-gradient(135deg, rgb(22, 68, 45), rgb(6, 37, 18));
+    color: #ffffff;
+    cursor: pointer;
+    transition: 0.3sec;
+}
+
+
+/* Media queries */
+
+@media screen and (max-width: 1200px)
+{
+    .form
+    {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 680px)
+{
+    .form
+    {
+		width: 90%;
+    }
+}
+
+@media screen and (max-width: 500px)
+{
+	.title
+	{
+		font-size: 40px;
+		padding-top: 6%;
+	}
+
+	.title-info
+	{
+		font-size: 13px;
+	}
+	
+	.form
+	{
+		padding: 6% 4%;
+		padding-top: 15%;
+	}
+
+	.input-group, .textarea-group
+    {
+		padding: 3% 0;
+	}
+	
+	input, textarea
+	{
+		font-size: 15px;
+	}
+
+	input:focus ~ label, input:not(:placeholder-shown) ~ label
+	{
+		top: -3.5em;
+		left: 0.1em;
+	}
+	
+	textarea:focus ~ label, textarea:not(:placeholder-shown) ~ label
+	{
+		top: -8.5em;
+		left: 0.2em;
+    }
+    
+    button
+    {
+        font-size: 15px;
+    }
 }

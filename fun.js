@@ -146,6 +146,5 @@ sign_in_btn.addEventListener('click', () => {
 });
 
 
-function goToSpecificPage() {
-  window.location.href = "https://example.com/"; // Replace this with the URL of the specific page you want to navigate to
-}
+
+
