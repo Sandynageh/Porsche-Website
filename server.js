@@ -1,5 +1,4 @@
 const express = require('express');
-//const mongoose = require('mongoose');
 require('dotenv').config();
 const { MongoClient } = require('mongodb');
 
@@ -109,51 +108,47 @@ client.connect()
 
         app.post('/login', async (req, res) => {
             const { UserName, Password } = req.body;
-        
+
             try {
                 // Attempt to find the user in both Customers and Admins collections
                 let user = await db.collection('Customers').findOne({ UserName });
                 let isAdmin = false;  // Flag to check if the user is an admin
-        
+
                 // If not found in Customers, try Admins
                 if (!user) {
                     user = await db.collection('Admins').findOne({ UserName });
-                     isAdmin = true;
-                    if (user) {
-                          // User is found in Admins collection
-                    }
+                    isAdmin = true;  // User is found in Admins collection
                 }
-        
+
                 // If user is not found in either collection
                 if (!user) {
                     return res.status(404).send('User not found.');
                 }
-        
+
                 // Check password (consider using bcrypt for hashing in production)
                 if (user.Password === Password) {
-                    if (isAdmin) {
-                        // User is an admin, return token
-                        const token = jwt.sign(
-                            { userId: user._id, UserName: user.UserName, isAdmin: true },
-                            process.env.JWT_SECRET,
-                            { expiresIn: '1h' }
-                     );
-                        return res.json({
-                            message: 'Login successful!',
-                            token: token
-                        });
-                    } else {
-                        // User is a customer, no token needed
-                        return res.json({ message: 'Login successful!' });
-                    }
+                    // Generate token for both admin and customer
+                    const token = jwt.sign(
+                        { userId: user._id, UserName: user.UserName, isAdmin },
+                        process.env.JWT_SECRET,
+                        { expiresIn: '1h' }
+                    );
+
+                    // Return success response with token
+                    return res.json({
+                        message: 'Login successful!',
+                        token: token
+                    });
+
                 } else {
-                    return res.status(401).send('Invalid credentials');
+                    return res.status(401).send('Invalid Password');
                 }
             } catch (err) {
                 console.error('Login error:', err);
                 return res.status(500).send('Internal server error');
             }
         });
+
 
 //add products
         app.post('/admin/productsAdd', authenticateToken, async (req, res) => {
@@ -263,14 +258,10 @@ client.connect()
         });
         
         //order 
-        app.post('/admin/productsOrder', authenticateToken, async (req, res) => {
+        app.post('/customer/productsOrder', authenticateToken, async (req, res) => {
             const { Category, Model } = req.body; // Data to identify the product
         
             try {
-                // Check if the user is an admin
-                if (!req.user.isAdmin) {
-                    return res.status(403).send('Access denied: Requires admin privileges.');
-                }
         
                 // Find the product and check the stock
                 const product = await db.collection('Products').findOne({ Category, Model });
